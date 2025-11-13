@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Index from './components/Index.jsx';
 import Shop from './components/Shop.jsx';
@@ -12,7 +12,7 @@ import Checkout from './components/Checkout.jsx';
 
 function App() {
   return (
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/shop" element={<Shop />} />
@@ -24,7 +24,7 @@ function App() {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="*" element={<Index />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
