@@ -10,7 +10,7 @@ const Login = () => {
   const [mode, setMode] = useState('login'); // 'login' | 'signup'
 
   useEffect(() => {
-    AOS.init({ duration: 700, once: true, offset: 80 });
+    AOS.init({ duration: 400, once: true, offset: 80 });
   }, []);
 
   return (

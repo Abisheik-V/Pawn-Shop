@@ -14,6 +14,28 @@
   --bs-link-hover-color: var(--color-primary-600);
 }
 
+/* Prevent horizontal overflow */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Ensure media never exceed container width */
+img, video, svg, canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Clip any accidental overflow from sections */
+.app-shell, header, main, footer, section {
+  overflow-x: clip;
+}
+
+/* Avoid flex items forcing overflow */
+[class^="col-"], [class*=" col-"] {
+  min-width: 0;
+}
+
 .hero-section {
   background: linear-gradient(135deg, var(--color-dark) 0%, #172033 55%, var(--color-accent) 100%);
 }
@@ -76,6 +98,12 @@
   display: block;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+}
+
+/* If AOS doesn't trigger, don't let any element with data-aos stay hidden */
+[data-aos].aos-init:not(.aos-animate) {
+  opacity: 1 !important;
+  transform: none !important;
 }
 
 /* Buttons in Gold */

@@ -45,7 +45,12 @@ const Shop = () => {
   const [addingId, setAddingId] = useState(null);
 
   useEffect(() => {
-    AOS.init({ duration: 700, once: true, offset: 80 });
+    AOS.init({ duration: 400, once: true, offset: 80 });
+    // In case images/content mount after init
+    const refresh = () => AOS.refreshHard();
+    setTimeout(refresh, 50);
+    window.addEventListener('load', refresh);
+    return () => window.removeEventListener('load', refresh);
   }, []);
 
   const categories = useMemo(() => ['All', ...Array.from(new Set(PRODUCTS.map(p => p.category)))], []);
@@ -54,6 +59,11 @@ const Shop = () => {
     if (category === 'All') return PRODUCTS;
     return PRODUCTS.filter(p => p.category === category);
   }, [category]);
+
+  // Refresh AOS when the filtered list changes so items are revealed
+  useEffect(() => {
+    setTimeout(() => AOS.refreshHard(), 0);
+  }, [filtered]);
 
   const addToCart = (product) => {
     try {

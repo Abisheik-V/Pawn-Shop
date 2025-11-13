@@ -8,7 +8,7 @@ import '../assets/style/style.css';
 
 const About = () => {
   useEffect(() => {
-    AOS.init({ duration: 700, once: true, offset: 80 });
+    AOS.init({ duration: 400, once: true, offset: 80 });
   }, []);
 
   const team = [
@@ -135,8 +135,8 @@ const About = () => {
 
         <section className="py-5" data-aos="fade-up">
           <div className="container">
-            <h3 className="fw-semibold mb-3 text-light">Our Mission</h3>
-            <p className="text-white mb-4">We exist to make access to cash simple, fair, and respectful—while giving quality goods a meaningful second life. We focus on honesty, value, and long-term community trust.</p>
+            <h3 className="fw-semibold mb-3 text-dark">Our Mission</h3>
+            <p className="text-dark mb-4">We exist to make access to cash simple, fair, and respectful—while giving quality goods a meaningful second life. We focus on honesty, value, and long-term community trust.</p>
             <div className="row g-3">
               <div className="col-12 col-md-4">
                 <div className="card h-100 shadow-sm">

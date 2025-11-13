@@ -9,7 +9,7 @@ import '../assets/style/style.css';
 const Cart = () => {
   const [items, setItems] = useState([]);
   useEffect(() => {
-    AOS.init({ duration: 700, once: true, offset: 80 });
+    AOS.init({ duration: 400, once: true, offset: 80 });
     try {
       const data = JSON.parse(localStorage.getItem('cart') || '[]');
       setItems(Array.isArray(data) ? data : []);

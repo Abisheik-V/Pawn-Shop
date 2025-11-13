@@ -8,7 +8,7 @@ import '../assets/style/style.css';
 
 const Index = () => {
   useEffect(() => {
-    AOS.init({ duration: 700, once: true, offset: 80 });
+    AOS.init({ duration: 400, once: true, offset: 80 });
   }, []);
 
   return (
